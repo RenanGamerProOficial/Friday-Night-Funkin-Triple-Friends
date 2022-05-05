@@ -265,18 +265,15 @@ class TitleState extends MusicBeatState
 		}else{
 			bg.makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
 		}
-		
-		// bg.antialiasing = ClientPrefs.globalAntialiasing;
-		// bg.setGraphicSize(Std.int(bg.width * 0.6));
-		// bg.updateHitbox();
+		bg = new FlxSprite().loadGraphic(Paths.image('NewTitleMenuBG')
+		bg.setGraphicSize(Std.int(bg.width * 1.1));
+                bg.screenCenter(); //my image isnt big enough
+                bg.antialiasing = ClientPrefs.globalAntialiasing;
 		add(bg);
 
-		logoBl = new FlxSprite(titleJSON.titlex, titleJSON.titley);
-		logoBl.frames = Paths.getSparrowAtlas('logoBumpin');
-		
+		logoBl.frames = Paths.getSparrowAtlas('Logo');
 		logoBl.antialiasing = ClientPrefs.globalAntialiasing;
-		logoBl.animation.addByPrefix('bump', 'logo bumpin', 24, false);
-		logoBl.animation.play('bump');
+                logoBl.offset.y += 60;
 		logoBl.updateHitbox();
 		// logoBl.screenCenter();
 		// logoBl.color = FlxColor.BLACK;
@@ -316,8 +313,8 @@ class TitleState extends MusicBeatState
 		}
 		gfDance.antialiasing = ClientPrefs.globalAntialiasing;
 		
-		add(gfDance);
-		gfDance.shader = swagShader.shader;
+		// add(gfDance);
+		// gfDance.shader = swagShader.shader;
 		add(logoBl);
 		logoBl.shader = swagShader.shader;
 
