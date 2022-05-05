@@ -266,7 +266,7 @@ class TitleState extends MusicBeatState
 			bg.makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
 		}
 		bg = new FlxSprite().loadGraphic(Paths.image('NewTitleMenuBG')
-		bg.setGraphicSize(Std.int(bg.width * 1.1));
+		bg.setGraphicSize(Std.int(bg.width * 1.1)); //replace the leTitleBG with your image
                 bg.animation.addByPrefix('titleBG', 'TitleMenuSSBG instance ', 24, false);
                 bg.animation.play('titleBG');
                 bg.screenCenter(); //my image isnt big enough
